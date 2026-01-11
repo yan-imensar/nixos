@@ -30,7 +30,10 @@
     isNormalUser = true;
     description = "Yan IMENSAR";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ neovim ];
+    packages = with pkgs; [ 
+      neovim
+      git
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
