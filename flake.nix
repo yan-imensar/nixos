@@ -13,6 +13,12 @@
           ./hosts/aya/default.nix
         ];
       };
+      zip = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/zip/default.nix
+        ];
+      };
     };
   };
 }
