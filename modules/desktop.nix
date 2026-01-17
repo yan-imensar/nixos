@@ -5,6 +5,11 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    gnomeExtensions.brightness-control-using-ddcutil
+    gnome-tweaks
+  ];
+
   # Clavier Colemak
   services.xserver.xkb = {
     layout = "us";
@@ -48,6 +53,8 @@
     enable = true;
     binfmt = true;
   };
+
+  programs.thunderbird.enable = true;
   
   # Impression
   services.printing.enable = true;

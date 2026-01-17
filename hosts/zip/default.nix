@@ -7,6 +7,7 @@
       ../../modules/gaming.nix
       ../../modules/desktop.nix
       ../../modules/virt.nix
+      ../../modules/apps/gui.nix
     ];
 
 

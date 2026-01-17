@@ -10,6 +10,12 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  hardware.i2c.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    lm_sensors
+  ];
+
   # Locale & Time
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -29,7 +35,7 @@
   users.users.bomal = {
     isNormalUser = true;
     description = "Yan IMENSAR";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "i2c"];
     packages = with pkgs; [ 
       neovim
       git

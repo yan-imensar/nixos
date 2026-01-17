@@ -14,6 +14,7 @@
     bottles
     heroic
     boxflat
+    osu-lazer-bin
   ];
 
   # Hardware gaming
