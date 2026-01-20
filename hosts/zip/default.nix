@@ -1,29 +1,28 @@
 { pkgs, ... }:
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
-      ../../modules/core.nix
-      ../../modules/gaming.nix
-      ../../modules/desktop.nix
-      ../../modules/virt.nix
-      ../../modules/apps/gui.nix
+      ../../modules/system/core.nix
+      ../../modules/hardware/amd.nix
+      ../../modules/hardware/bluetooth.nix
+      ../../modules/desktop/gnome.nix
+      ../../modules/desktop/audio.nix
+      ../../modules/desktop/printing.nix
+      ../../modules/programs/browsers.nix
+      ../../modules/programs/communication.nix
+      ../../modules/programs/development.nix
+      ../../modules/programs/gaming.nix
+      ../../modules/programs/virtualization.nix
+      ../../modules/services/flatpak.nix
     ];
-
 
   networking.hostName = "zip";
   networking.networkmanager.enable = true;
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  hardware.amdgpu.opencl.enable = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 8;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  system.stateVersion = "25.11"; 
+  system.stateVersion = "25.11";
 }

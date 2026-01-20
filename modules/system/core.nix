@@ -16,6 +16,8 @@
     lm_sensors
   ];
 
+  programs.direnv.enable = true;
+
   # Locale & Time
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -36,10 +38,11 @@
     isNormalUser = true;
     description = "Yan IMENSAR";
     extraGroups = [ "networkmanager" "wheel" "i2c"];
-    packages = with pkgs; [ 
+    packages = with pkgs; [
       neovim
       git
     ];
+
   };
 
   nixpkgs.config.allowUnfree = true;
