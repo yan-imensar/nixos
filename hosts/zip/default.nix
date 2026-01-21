@@ -11,6 +11,7 @@
       ../../modules/desktop/printing.nix
       ../../modules/desktop/hyprland.nix
       ../../modules/programs/core.nix
+      ../../modules/programs/vpn.nix
       ../../modules/programs/browsers.nix
       ../../modules/programs/communication.nix
       ../../modules/programs/development.nix
