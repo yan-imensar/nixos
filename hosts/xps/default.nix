@@ -6,6 +6,7 @@
       ../../modules/system/core.nix
       ../../modules/hardware/bluetooth.nix
       ../../modules/desktop/gnome.nix
+      ../../modules/desktop/hyprland.nix
       ../../modules/desktop/audio.nix
       ../../modules/desktop/printing.nix
       ../../modules/programs/browsers.nix

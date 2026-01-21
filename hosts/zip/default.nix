@@ -9,6 +9,8 @@
       ../../modules/desktop/gnome.nix
       ../../modules/desktop/audio.nix
       ../../modules/desktop/printing.nix
+      ../../modules/desktop/hyprland.nix
+      ../../modules/programs/core.nix
       ../../modules/programs/browsers.nix
       ../../modules/programs/communication.nix
       ../../modules/programs/development.nix
