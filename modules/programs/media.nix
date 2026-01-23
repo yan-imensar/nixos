@@ -1,9 +1,7 @@
 { pkgs, inputs, ... }:
 {
 
-  services.tailscale.enable = true;
-  services.netbird.enable = true;
-
   environment.systemPackages = with pkgs; [
+  	spotify
   ];
 }
