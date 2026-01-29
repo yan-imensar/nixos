@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.brightness-control-using-ddcutil
     gnomeExtensions.tiling-shell
+    gnomeExtensions.tray-icons-reloaded
     gnome-tweaks
   ];
 

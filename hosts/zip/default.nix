@@ -11,6 +11,7 @@
       ../../modules/desktop/printing.nix
       ../../modules/desktop/hyprland.nix
       ../../modules/programs/core.nix
+      ../../modules/programs/media.nix
       ../../modules/programs/vpn.nix
       ../../modules/programs/browsers.nix
       ../../modules/programs/communication.nix
@@ -18,6 +19,7 @@
       ../../modules/programs/gaming.nix
       ../../modules/programs/virtualization.nix
       ../../modules/services/flatpak.nix
+      ../../modules/work/core.nix
     ];
 
   networking.hostName = "zip";
