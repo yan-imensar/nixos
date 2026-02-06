@@ -18,6 +18,7 @@
       ../../modules/programs/development.nix
       ../../modules/programs/gaming.nix
       ../../modules/programs/virtualization.nix
+      ../../modules/kube/default.nix
       ../../modules/services/flatpak.nix
       ../../modules/work/core.nix
     ];

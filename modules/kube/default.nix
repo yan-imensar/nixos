@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
+
   environment.systemPackages = with pkgs; [
-  	teams-for-linux
+  	kubectl
+	kubernetes-helm
   ];
 }
