@@ -7,22 +7,37 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-darwin, ... }@inputs: {
+
     nixosConfigurations = {
       aya = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
+	      specialArgs = { inherit inputs; };
         modules = [
           ./hosts/aya/default.nix
         ];
       };
       zip = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
+	      specialArgs = { inherit inputs; };
         modules = [
           ./hosts/zip/default.nix
+        ];
+      };
+    };
+
+    darwinConfigurations = {
+      macbook-yan = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/macbook/default.nix
         ];
       };
     };
