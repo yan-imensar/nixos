@@ -1,15 +1,28 @@
 { pkgs, ... }:
 {
+  imports =
+    [
+    ];
 
   networking.hostName = "macbook-yan";
   networking.computerName = "MacBook Yan";
 
   environment.systemPackages = with pkgs; [
     neovim
-    sl
-    git
-    firefox
+    kitty
+    bitwarden-desktop
+    _1password-gui
   ];
+
+  homebrew = {
+    enable = true;
+    brews = [
+      "mas"
+    ];
+    casks = [
+    ];
+    onActivation.cleanup = "zap";
+  };
 
   system.primaryUser = "yan";
   system.defaults = {
