@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +14,10 @@
     };
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -41,20 +46,19 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/macbook/default.nix
-	  inputs.nix-homebrew.darwinModules.nix-homebrew
+          inputs.nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
               enable = true;
-              enableRosetta = true;
               user = "yan";
               autoMigrate = true;
             };
           }
-	  home-manager.darwinModules.home-manager
+          inputs.home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.yan= ./users/yan/home.nix;
+            home-manager.users.yan = import ./users/yan/home.nix;
           }
         ];
       };

@@ -1,16 +1,19 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "yan";
-  home.homeDirectory = "/home/yan";
+  home.homeDirectory = lib.mkForce "/Users/yan";
 
   programs.git = {
     enable = true;
-    userName = "Yan IMENSAR";
-    userEmail = "yimensar@guimini.com";
+    settings.user.name = "Yan IMENSAR";
+    settings.user.email = "yimensar@guimini.com";
   };
 
-  home.stateVersion = "25.11";
+  home.file.".config/kitty/kitty.conf".source = ./dotfiles/kitty.conf;
+  home.file.".aerospace.toml".source = ./dotfiles/aerospace.toml;
+
+  home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 }
 
